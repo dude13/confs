@@ -8,16 +8,18 @@ echo
 echo package atualization ...
 echo
 sudo apt-get upgrade -y 
-echo
+echo OKAY
 
 echo clean apt
 echo
 sudo apt-get clean  
-echo
+echo OKAY
 
 echo autoremove apt
 echo
 sudo apt autoremove 
 echo
+
+echo Update/Upgrade realized
 
 
