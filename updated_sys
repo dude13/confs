@@ -2,19 +2,20 @@
 
 echo system atualization ...
 echo
-echo
 
 sudo apt-get update 
-echo
 echo
 
 # package atualization ...
 echo
-echo
-
 sudo apt-get upgrade -y 
-echo
+
+# clean apt
+sudo apt-get clean  
 echo
 
-sudo apt-get clean && sudo apt autoremove 
+#autoremove apt
+sudo apt autoremove 
+echo
+
 
