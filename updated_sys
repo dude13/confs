@@ -1,5 +1,7 @@
 #/bin/bash
 
+
+echo
 echo system atualization ...
 echo
 sudo apt-get update 
@@ -12,11 +14,13 @@ echo OKAY
 
 echo clean apt
 echo
+sleep 2
 sudo apt-get clean  
 echo OKAY
 
 echo autoremove apt
 echo
+sleep 2
 sudo apt autoremove 
 echo
 
