@@ -1,6 +1,6 @@
 #/bin/bash
 
-
+echo
 echo
 echo system atualization ...
 echo
@@ -20,9 +20,12 @@ echo OKAY
 
 echo autoremove apt
 echo
+sleep 1
 sudo apt autoremove 
 echo
 
 echo Update/Upgrade realized
+echo
+echo
 
 
