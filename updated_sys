@@ -1,7 +1,20 @@
 #/bin/bash
 
-echo System Atualization ...
+echo system atualization ...
+echo
+echo
 
+sudo apt-get update 
+echo
+echo
 
-sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get clean && sudo apt autoremove 
+# package atualization ...
+echo
+echo
+
+sudo apt-get upgrade -y 
+echo
+echo
+
+sudo apt-get clean && sudo apt autoremove 
 
