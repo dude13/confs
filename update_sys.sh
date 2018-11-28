@@ -17,6 +17,7 @@ echo
 sleep 1
 sudo apt-get clean  
 echo OKAY
+echo
 
 echo autoremove apt
 echo
