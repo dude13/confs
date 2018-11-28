@@ -1,19 +1,20 @@
 #/bin/bash
 
 echo
-echo
-echo Atualizando sistema
-
+echo "######################################"
+echo "######## Atualizando Sistema #########"
+echo "######################################"
 echo
 sudo apt-get update && sudo apt-get upgrade -y
 
 echo
-echo Instalando stress-ng-test
-
+echo "######################################"
+echo "######### Stress-NG Install ##########"
+echo "######################################"
 echo
 sudo apt-get install stress-ng -y
 echo
-echo
+
 #Parametros
 #--cpu => faz um fork de processos a serem processados pela CPU
 #--cpu-method all => executa um teste de stress em todas as CPUs disponiveis
@@ -25,9 +26,10 @@ echo
 #--hdd-bytes => tamanho da escrita para cada processo
 #--time-out => periodo do teste
 #--metrics-brief => mostra a saida das metricas apos execucao
-
-echo  STRESS_NG TEST
 echo
-echo
+echo "#########################################"
+echo "######### SSTRESS_NG FULL TEST ##########"
+echo "#########################################"
+echo  
 
 time stress-ng --cpu 4 --cpu-method all --cpu-ops 10000 --vm 6 --vm-bytes 1G --io 1000 --hdd 50 --hdd-bytes 4G --timeout 180s --metrics-brief
