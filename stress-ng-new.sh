@@ -1,9 +1,7 @@
 #/bin/bash
 clear
 
-nohup [/home/d13/Dropbox/infraops/projects/stress/xterm.sh] &
-
-escho 
+echo 
 function pause(){
 	read -p "$*"
 	}
