@@ -1,7 +1,6 @@
 #/bin/bash
 clear
-
-nohup [/home/d13/Dropbox/infraops/projects/stress/xterm.sh] &
+xterm htop&
 
 escho 
 function pause(){
