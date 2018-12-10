@@ -27,17 +27,12 @@ echo
 #--time-out => periodo do teste
 #--metrics-brief => mostra a saida das metricas apos execucao
 echo
-<<<<<<< HEAD
-echo 
-echo  STRESS_NG TEST 
-echo
-echo 
-
-time stress-ng --cpu 4 --cpu-method all --cpu-ops 10000 --vm 6 --vm-bytes 1G --io 1000 --hdd 50 --hdd-bytes 4G --timeout 180s --metrics-brief
 
 echo "#########################################"
-echo "######### SSTRESS_NG FULL TEST ##########"
+echo "######### STRESS_NG FULL TEST ###########"
 echo "#########################################"
 echo  
 
 time stress-ng --cpu 4 --cpu-method all --cpu-ops 10000 --vm 6 --vm-bytes 1G --io 1000 --hdd 50 --hdd-bytes 4G --timeout 180s --metrics-brief
+
+
