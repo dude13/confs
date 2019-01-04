@@ -2,8 +2,9 @@
 
 clear
 sudo apt-get install htop xterm stress-ng -y
-nohyp xterm htop &
 echo
+nohup xterm htop > /dev/null &
+
 
 cat <<-EOF
 Abaixo segue os modelos dos laptops:
@@ -77,6 +78,3 @@ do
 	   ;;   
   esac
 done
-
-
-
