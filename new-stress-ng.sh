@@ -2,7 +2,7 @@
 
 clear
 sudo apt-get install htop xterm stress-ng -y
-#execute xterm htop |
+nohyp xterm htop &
 echo
 
 cat <<-EOF
