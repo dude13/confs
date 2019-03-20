@@ -1,0 +1,11 @@
+ /usr/share/applications/nu-stress-ng.desktop 
+[Desktop Entry]
+Name=Stress NG
+Comment=Use the command line
+Encoding=UTF-8
+Exec=gnome-terminal bash -- "/usr/bin/nu-stress-ng"
+Icon=utilities-terminal
+Type=Application
+Categories=Utility;
+StartupNotify=true
+Terminal=false
