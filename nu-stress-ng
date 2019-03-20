@@ -1,1 +1,63 @@
 
+#!/bin/bash
+#set -x # set is test output
+clear
+
+# stress-ng is not instaled
+if [ ! -e '/usr/bin/stress-ng' ]; then
+    echo "##### Installing stress-ng... #####"
+    echo ""
+    sudo apt-get clean > /dev/null 2>&1
+    sudo apt-get update > /dev/null 2>&1
+    sudo apt-get upgrade -y  > /dev/null 2>&1
+    sudo apt-get install htop xterm stress-ng -y
+    clear
+else
+    echo "##### Stress-NG is installed! ####"
+    echo ""
+fi
+
+# remove old file tmp log
+if [ -f /tmp/stress.log ]; then
+    echo "Remove old file /tmp/stress.log"
+    echo ""
+    rm /tmp/stress-ng.log
+fi
+
+# up htop
+sudo xterm htop &
+filepn=$(sudo dmidecode -s system-product-name)
+
+# check system and run stress-ng
+if [[ $filepn == *5490* ]]; then
+    echo "##### Latitude 5490 #####"
+    echo "AGUARDE O TERMINO DO TESTE DE STRESS :PORFAVORZINHO:"
+    echo ""
+    time stress-ng --cpu 8 --cpu-method all --cpu-ops 10000 --vm 55 --vm-bytes 16G --io 1000 --hdd 50 --hdd-bytes 4G --timeout 300s --metrics-brief >> /tmp/stress-ng.log
+elif [[ $filepn == *7460* ]]; then
+    echo "##### Dourado (Inspiron 14 / Inspiron 7460) #####"
+    echo "-> AGUARDE O TERMINO DO TESTE DE STRESS :PORFAVORZINHO:"
+    echo ""
+    time stress-ng --cpu 4 --cpu-method all --cpu-ops 10000 --vm 30 --vm-bytes 1G --io 1000 --hdd 50 --hdd-bytes 4G --timeout 300s --metrics-brief >> /tmp/stress-ng.log
+elif [[ $filepn == *3470* ]]; then
+    echo "##### Emborrachado (Latitude 3470) #####"
+    echo "-> AGUARDE O TERMINO DO TESTE DE STRESS :PORFAVORZINHO:"
+    echo ""
+    time stress-ng --cpu 4 --cpu-method all --cpu-ops 10000 --vm 7 --vm-bytes 1G --io 1000 --hdd 50 --hdd-bytes 4G --timeout 300s --metrics-brief >> /tmp/stress-ng.log
+elif [[ $filepn == *5566* ]]; then
+    echo "##### Aspero (Inspiron 15 /  Inspiron 5566) #####"
+    echo "-> AGUARDE O TERMINO DO TESTE DE STRESS :PORFAVORZINHO:"
+    echo ""
+    time stress-ng --cpu 4 --cpu-method all --cpu-ops 10000 --vm 7 --vm-bytes 1G --io 1000 --hdd 50 --hdd-bytes 4G --timeout 300s --metrics-brief >> /tmp/stress-ng.log
+elif [[ $filepn == *5448* ]]; then
+    echo "##### Prata (Inspiron 15 / Inspiron 5448) #####"
+    echo "-> AGUARDE O TERMINO DO TESTE DE STRESS :PORFAVORZINHO:"
+    echo ""
+    time stress-ng --cpu 4 --cpu-method all --cpu-ops 10000 --vm 7 --vm-bytes 1G --io 1000 --hdd 50 --hdd-bytes 4G --timeout 300s --metrics-brief >> /tmp/stress-ng.log
+else
+    echo "Sorry i dont understand"
+fi
+
+echo "##### Results in /tmp/stress-ng.log #####"
+echo "##### Finish stress test. #####"
+sleep 5
